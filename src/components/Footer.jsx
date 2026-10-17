@@ -44,7 +44,7 @@ export default function Footer() {
                 href="https://www.facebook.com/faithengineeringworks?rdid=vgYo5nUO3YGwRb3U&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1D4AuESQj3%2F#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full bg-[#7a1226] hover:bg-red-600 flex items-center justify-center transition-all duration-300 shadow-lg hover:scale-110"
+                className="w-11 h-11 rounded-full bg-[#7a1226]  flex items-center justify-center transition-all duration-300 shadow-lg hover:scale-110"
                 aria-label="Facebook"
               >
                 <FaFacebookF className="text-white text-base" />
@@ -53,7 +53,7 @@ export default function Footer() {
                 href="https://www.instagram.com/faithengieeringworks?igsh=YnBnNnltYTltZWJ5%20"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full bg-[#7a1226] hover:bg-red-600 flex items-center justify-center transition-all duration-300 shadow-lg hover:scale-110"
+                className="w-11 h-11 rounded-full bg-[#7a1226]  flex items-center justify-center transition-all duration-300 shadow-lg hover:scale-110"
                 aria-label="Instagram"
               >
                 <FaInstagram className="text-white text-base" />
@@ -62,7 +62,7 @@ export default function Footer() {
                 href="https://www.youtube.com/@faithengineeringworksnewdelhi"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full bg-[#7a1226] hover:bg-red-600 flex items-center justify-center transition-all duration-300 shadow-lg hover:scale-110"
+                className="w-11 h-11 rounded-full bg-[#7a1226]  flex items-center justify-center transition-all duration-300 shadow-lg hover:scale-110"
                 aria-label="YouTube"
               >
                 <FaYoutube className="text-white text-base" />

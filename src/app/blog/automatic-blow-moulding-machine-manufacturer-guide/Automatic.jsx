@@ -60,7 +60,7 @@ export default function BlowMouldingGuidePage() {
             If you are searching for a reliable{" "}
             <Link
               href="/product/automatic-blow-moulding-machine-manufacturer/"
-              className="text-[#dc2626] font-semibold hover:underline"
+              className="text-[#dc2626] hover:text-red-700 font-semibold "
             >
               Automatic Blow Moulding Machine Manufacturer
             </Link>
@@ -116,7 +116,7 @@ export default function BlowMouldingGuidePage() {
             An{" "}
             <Link
               href="/product/automatic-blow-moulding-machine-manufacturer/"
-              className="text-[#dc2626] font-semibold hover:underline"
+              className="text-[#dc2626] hover:text-red-700 font-semibold "
             >
               Automatic Blow Moulding Machine
             </Link>{" "}
@@ -201,7 +201,7 @@ export default function BlowMouldingGuidePage() {
             As an established{" "}
             <Link
               href="/product/automatic-blow-moulding-machine-manufacturer/"
-              className="text-[#dc2626] font-semibold hover:underline"
+              className="text-[#dc2626] hover:text-red-700 font-semibold "
             >
               Automatic Blow Moulding Machine Manufacturer
             </Link>
@@ -351,7 +351,7 @@ export default function BlowMouldingGuidePage() {
             Engineering Works’{" "}
             <Link
               href="/blow-moulding-machine-manufacturer/"
-              className="text-[#dc2626] font-semibold hover:underline"
+              className="text-[#dc2626] hover:text-red-700 font-semibold "
             >
               2 Litre Double Head Single Stage Blow Moulding Machine
             </Link>
@@ -699,7 +699,7 @@ export default function BlowMouldingGuidePage() {
           <p>
             <Link
               href="/contact-us"
-              className="text-[#dc2626] font-semibold hover:underline"
+              className="text-[#dc2626] hover:text-red-700 font-semibold "
             >
               Faith Engineering Works
             </Link>{" "}
@@ -784,7 +784,7 @@ export default function BlowMouldingGuidePage() {
           <p>
             <Link
               href="/"
-              className="text-[#dc2626] font-semibold hover:underline"
+              className="text-[#dc2626] hover:text-red-700 font-semibold "
             >
               Faith Engineering Works
             </Link>{" "}
@@ -858,7 +858,7 @@ export default function BlowMouldingGuidePage() {
             Want to see how the{" "}
             <Link
               href="/hdpe-blow-moulding-machine/"
-              className="text-[#dc2626] font-semibold hover:underline"
+              className="text-[#dc2626] hover:text-red-700 font-semibold "
             >
               HDPE blow moulding
             </Link>{" "}
@@ -1078,7 +1078,7 @@ export default function BlowMouldingGuidePage() {
             Choosing the right{" "}
             <Link
               href="/product/automatic-blow-moulding-machine-manufacturer/"
-              className="text-red-600 font-bold hover:underline underline-offset-2 transition-colors"
+              className="text-red-600 hover:text-red-700 font-bold  underline-offset-2 transition-colors"
             >
               Automatic Blow Moulding Machine Manufacturer
             </Link>{" "}
@@ -1088,7 +1088,7 @@ export default function BlowMouldingGuidePage() {
             machine range from 250ml to 10 litres and above,{" "}
             <Link
               href="/contact-us"
-              className="text-red-600 font-bold hover:underline underline-offset-2 transition-colors"
+              className="text-red-600 hover:text-red-700 font-bold  underline-offset-2 transition-colors"
             >
               Faith Engineering Works
             </Link>{" "}

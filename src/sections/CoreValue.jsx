@@ -79,7 +79,7 @@ const rightCardVariants = {
 const ValueCard = ({ item, motionVariant }) => (
   <motion.div
     variants={motionVariant}
-    className="w-full bg-[#8A000C]/50 hover:bg-[#8A000C] transition-colors duration-300 py-4 px-5 rounded-[4px] flex items-start gap-4 text-white cursor-pointer shadow-md"
+    className="w-full bg-[#8A000C]/50 hover:bg-[#8A000C] transition-colors duration-300 py-4 px-5 rounded-[4px] flex items-start gap-4 text-white  shadow-md"
   >
     {/* Icon Circle */}
     <div className="w-10 h-10 rounded-full bg-[#F8DEDE] flex items-center justify-center shrink-0 mt-0.5">

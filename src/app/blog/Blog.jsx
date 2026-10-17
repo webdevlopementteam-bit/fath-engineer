@@ -77,7 +77,7 @@ export default function BlogPage() {
                   Blog
                 </span>
 
-                <h2 className="text-[19px] font-bold leading-[1.35] tracking-[-0.025em] text-slate-900 transition-colors duration-200 group-hover:text-[#AF0020] sm:text-xl">
+                <h2 className="text-[19px] font-semibold font-serif leading-[1.35] tracking-[-0.025em] text-slate-900 transition-colors duration-200 group-hover:text-[#AF0020] sm:text-lg">
                   <Link
                     href={`/blog/${blog.slug}`}
                     className="rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#AF0020] focus-visible:ring-offset-4"

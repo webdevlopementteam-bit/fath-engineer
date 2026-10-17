@@ -21,16 +21,6 @@ const AnimatedSection = ({ children, delay = 0, className = "" }) => (
   </motion.div>
 );
 
-// Red contact link component
-const RedContactLink = ({ children }) => (
-  <Link
-    href="/contact-us"
-    className="text-[#dc2626] font-semibold hover:underline decoration-[#dc2626] transition-colors"
-  >
-    {children}
-  </Link>
-);
-
 // Standard section heading
 const SectionHeading = ({ children, className = "" }) => (
   <h2
@@ -319,12 +309,17 @@ export default function BlowMouldingGuidePage() {
           <p>
             If you are in the plastic packaging business, you already know how
             important the right machine is. A{" "}
-            <RedContactLink>blow moulding machine</RedContactLink> is used to
-            make hollow plastic products like bottles, cans, jars, and
-            containers. The process is simple to understand: hot plastic (called
-            a parison) is placed inside a mould, and then air is blown into it.
-            The air pushes the plastic against the mould walls, and it takes the
-            exact shape of a bottle or container.
+            <Link
+              href="/blow-moulding-machine-manufacturer"
+              className="text-[#dc2626] font-semibold decoration-[#dc2626] transition-colors"
+            >
+              blow moulding machine
+            </Link>{" "}
+            is used to make hollow plastic products like bottles, cans, jars,
+            and containers. The process is simple to understand: hot plastic
+            (called a parison) is placed inside a mould, and then air is blown
+            into it. The air pushes the plastic against the mould walls, and it
+            takes the exact shape of a bottle or container.
           </p>
           <p>
             This is why blow moulding machines are used in so many industries —
@@ -338,13 +333,19 @@ export default function BlowMouldingGuidePage() {
               Blow Moulding Machine Manufacturer
             </span>
             ,{" "}
-            <RedContactLink>
+            <Link
+              href="/product/plastic-blow-moulding-machine"
+              className="text-[#dc2626] font-semibold decoration-[#dc2626] transition-colors"
+            >
               Plastic Blow Moulding Machine Manufacturer
-            </RedContactLink>
+            </Link>
             , or{" "}
-            <RedContactLink>
+            <Link
+              href="/hdpe-blow-moulding-machine/"
+              className="text-[#dc2626] font-semibold decoration-[#dc2626] transition-colors"
+            >
               HDPE Blow Moulding Machine Manufacturer
-            </RedContactLink>
+            </Link>
             , this guide will help you understand everything — how the machine
             works, what to check before buying, and why{" "}
             <span className="font-bold">Faith Engineering Works</span> is a name
@@ -363,10 +364,15 @@ export default function BlowMouldingGuidePage() {
         <AnimatedSection className="mt-12 space-y-5">
           <SectionHeading>About Faith Engineering Works</SectionHeading>
           <p>
-            <RedContactLink>Faith Engineering Works</RedContactLink> is a
-            Delhi-based manufacturer of Plastic and HDPE Blow Moulding Machines,
-            located in Bawana Industrial Area, New Delhi. The company has been
-            working in this field for more than{" "}
+            <Link
+              href="/about-us"
+              className="text-[#dc2626] font-semibold decoration-[#dc2626] transition-colors"
+            >
+              Faith Engineering Works
+            </Link>{" "}
+            is a Delhi-based manufacturer of Plastic and HDPE Blow Moulding
+            Machines, located in Bawana Industrial Area, New Delhi. The company
+            has been working in this field for more than{" "}
             <span className="font-bold">25 years</span>, under the leadership of
             Mr. Shaji Varghese, who brings deep, hands-on experience in the
             plastic blow moulding industry.
@@ -507,9 +513,14 @@ export default function BlowMouldingGuidePage() {
           </SectionHeading>
           <p>
             To give you a real idea of what{" "}
-            <RedContactLink>Faith Engineering Works</RedContactLink> offers,
-            here is a quick look at some of their popular models, covering
-            different container sizes and machine types.
+            <Link
+              href="/product/plastic-blow-moulding-machine/"
+              className="text-[#dc2626] font-semibold decoration-[#dc2626] transition-colors"
+            >
+              Faith Engineering Works
+            </Link>{" "}
+            offers, here is a quick look at some of their popular models,
+            covering different container sizes and machine types.
           </p>
 
           <h3 className="text-2xl sm:text-3xl font-serif font-semibold text-gray-950 pt-2">
@@ -580,7 +591,13 @@ export default function BlowMouldingGuidePage() {
           </SectionHeading>
           <p>
             Here are the key reasons customers across India trust{" "}
-            <RedContactLink>Faith Engineering Works</RedContactLink>:
+            <Link
+              href="/"
+              className="text-[#dc2626] font-semibold decoration-[#dc2626] transition-colors"
+            >
+              Faith Engineering Works
+            </Link>
+            :
           </p>
 
           <ol className="list-decimal list-outside pl-6 space-y-3 text-gray-800">
@@ -689,7 +706,12 @@ export default function BlowMouldingGuidePage() {
           <SectionHeading>Conclusion</SectionHeading>
           <p>
             Choosing the right{" "}
-            <RedContactLink>Blow Moulding Machine Manufacturer</RedContactLink>{" "}
+            <Link
+              href="/blow-moulding-machine-manufacturer/"
+              className="text-[#dc2626] font-semibold decoration-[#dc2626] transition-colors"
+            >
+              Blow Moulding Machine Manufacturer
+            </Link>{" "}
             is one of the most important decisions for any plastic packaging
             business. With over 25 years of experience, ISO 9001:2008
             certification, and a strong track record of supplying reliable{" "}
@@ -703,8 +725,13 @@ export default function BlowMouldingGuidePage() {
           <p>
             Whether you are a small business starting your first production line
             or an established manufacturer looking to expand capacity,{" "}
-            <RedContactLink>Faith Engineering Works</RedContactLink> offers
-            machines, guidance, and support to help your business grow.
+            <Link
+              href="/contact-us"
+              className="text-[#dc2626] font-semibold decoration-[#dc2626] transition-colors"
+            >
+              Faith Engineering Works
+            </Link>{" "}
+            offers machines, guidance, and support to help your business grow.
           </p>
         </AnimatedSection>
 

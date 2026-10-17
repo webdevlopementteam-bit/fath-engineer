@@ -119,7 +119,7 @@ export default function CustomersAndTestimonials() {
   }
 
   return (
-    <section className="bg-[#FFF9F5] py-10 px-4 sm:px-6 lg:px-10 overflow-hidden">
+    <section className="bg-[#FFF9F5] py-10 px-4 sm:px-6 lg:px-10 overflow-hidden ">
       {/* Wide Container */}
       <div className="max-w-[1440px] w-full mx-auto">
         {/* ================= OUR CUSTOMERS SECTION ================= */}

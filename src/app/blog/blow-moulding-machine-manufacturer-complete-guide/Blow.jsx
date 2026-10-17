@@ -80,7 +80,7 @@ export default function BlowMouldingGuidePage() {
             Choosing the right{" "}
             <Link
               href="/blow-moulding-machine-manufacturer/"
-              className="text-red-600 font-bold hover:underline underline-offset-2 transition-colors"
+              className="text-red-600 font-bold  underline-offset-2 transition-colors"
             >
               blow moulding machine manufacturer
             </Link>{" "}
@@ -165,7 +165,7 @@ export default function BlowMouldingGuidePage() {
             Not every{" "}
             <Link
               href="/contact-us"
-              className="text-red-600 font-bold hover:underline underline-offset-2 transition-colors"
+              className="text-red-600 font-bold  underline-offset-2 transition-colors"
             >
               blow moulding machine manufacturer
             </Link>{" "}
@@ -369,7 +369,7 @@ export default function BlowMouldingGuidePage() {
             parts, moulds, and control systems. For buyers, choosing a{" "}
             <Link
               href="/blow-moulding-machine-manufacturer-in-delhi/"
-              className="text-red-600 font-bold hover:underline underline-offset-2 transition-colors"
+              className="text-red-600 font-bold  underline-offset-2 transition-colors"
             >
               blow moulding machine manufacturer in Delhi
             </Link>{" "}
@@ -427,7 +427,7 @@ export default function BlowMouldingGuidePage() {
           <p>
             <Link
               href="/"
-              className="text-red-600 font-bold hover:underline underline-offset-2 transition-colors"
+              className="text-red-600 font-bold  underline-offset-2 transition-colors"
             >
               Faith Engineering Works
             </Link>{" "}
@@ -609,7 +609,7 @@ export default function BlowMouldingGuidePage() {
             Choosing a{" "}
             <Link
               href="/blow-moulding-machine-manufacturer/"
-              className="text-red-600 font-bold hover:underline underline-offset-2 transition-colors"
+              className="text-red-600 font-bold  underline-offset-2 transition-colors"
             >
               blow moulding machine manufacturer
             </Link>{" "}

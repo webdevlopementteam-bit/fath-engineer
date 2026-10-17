@@ -26,7 +26,7 @@ export default function BlowMouldingGuidePage() {
         {/* Header / Title Section */}
         <header className="mb-10">
           <FadeInWhenVisible>
-            <h1 className="font-serif text-3xl sm:text-4xl  font-bold text-gray-900 leading-[1.25] tracking-tight mb-6">
+            <h1 className="font-serif text-2xl sm:text-4xl  font-bold text-gray-900 leading-[1.25] tracking-tight mb-6">
               Buy Fully Automatic Blow Moulding Machine Price in Delhi: Complete
               Buyer’s Guide, Comparison &amp; Pricing (2026)
             </h1>
