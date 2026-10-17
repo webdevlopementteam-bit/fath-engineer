@@ -1,17 +1,22 @@
 import React from "react";
+import BlogPage from "./Blog";
 
 export const metadata = {
-  title: "",
+  title: "Blog | Faith Engineering Works",
   description: "",
   keywords: ["", ""],
 
   alternates: {
-    canonical: "",
+    canonical: "https://www.blowmouldmachinemanufacturer.com/blog/",
   },
 };
 
 function page() {
-  return <></>;
+  return (
+    <>
+      <BlogPage />
+    </>
+  );
 }
 
 export default page;
