@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Breadcrumb from "@/components/Breadcrumb";
 import { z } from "zod";
+import { motion } from "framer-motion";
 import {
   Phone,
   Mail,
@@ -57,6 +58,11 @@ export default function Contact() {
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
+
+  const transitionConfig = {
+    duration: 0.85,
+    ease: [0.25, 0.1, 0.25, 1],
+  };
 
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
@@ -149,7 +155,14 @@ export default function Contact() {
       <Breadcrumb title="Contact Us" />
 
       <main className="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <div className="mx-auto mb-12 max-w-3xl text-center">
+        {/* Header Introduction */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={transitionConfig}
+          className="mx-auto mb-12 max-w-3xl text-center"
+        >
           <span className="inline-flex items-center rounded-full border border-[#AF0020]/15 bg-[#AF0020]/5 px-5 py-2 text-base font-medium text-[#AF0020]">
             We’re Here to Help
           </span>
@@ -164,11 +177,17 @@ export default function Contact() {
             Have a question or need assistance? Contact our team and we’ll be
             happy to help.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 items-stretch gap-7 lg:grid-cols-2 lg:gap-8">
-          {/* Contact form */}
-          <section className="h-full overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-[0_12px_45px_rgba(80,0,16,0.07)]">
+          {/* Left: Contact form slides in from left */}
+          <motion.section
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={transitionConfig}
+            className="h-full overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-[0_12px_45px_rgba(80,0,16,0.07)]"
+          >
             <div className="border-b border-stone-100 bg-gradient-to-r from-[#AF0020]/[0.07] via-white to-white px-5 py-6 sm:px-8">
               <div className="flex items-center gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#AF0020] text-white">
@@ -380,10 +399,16 @@ export default function Contact() {
                 Please check your contact details before submitting.
               </p>
             </form>
-          </section>
+          </motion.section>
 
-          {/* Contact information */}
-          <section className="flex h-full flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-[0_12px_45px_rgba(80,0,16,0.07)]">
+          {/* Right: Contact information slides in from right */}
+          <motion.section
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={transitionConfig}
+            className="flex h-full flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-[0_12px_45px_rgba(80,0,16,0.07)]"
+          >
             <div className="relative overflow-hidden bg-[#AF0020] px-5 py-7 text-white sm:px-8">
               <div className="absolute -right-10 -top-12 h-40 w-40 rounded-full border-[20px] border-white/10" />
               <div className="absolute -bottom-16 right-24 h-32 w-32 rounded-full bg-white/5" />
@@ -467,13 +492,19 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-          </section>
+          </motion.section>
         </div>
       </main>
 
-      {/* Map */}
+      {/* Map Section */}
       <section className="w-full overflow-hidden border-t border-stone-200 bg-[#FFF9F5]">
-        <div className="mx-auto w-full max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={transitionConfig}
+          className="mx-auto w-full max-w-7xl px-4 pt-8 sm:px-6 lg:px-8"
+        >
           <h2 className="text-2xl font-semibold text-[#AF0020]">
             Find Our Location
           </h2>
@@ -481,9 +512,15 @@ export default function Contact() {
           <p className="mt-3 text-base leading-relaxed text-stone-600 lg:text-lg">
             Explore our location on the map below.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="mx-auto mt-6 w-full max-w-7xl px-4 pb-8 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={transitionConfig}
+          className="mx-auto mt-6 w-full max-w-7xl px-4 pb-8 sm:px-6 lg:px-8"
+        >
           <div className="overflow-hidden rounded-2xl border border-stone-200 bg-white p-1.5 shadow-[0_12px_40px_rgba(80,0,16,0.10)]">
             <div className="h-[260px] overflow-hidden rounded-xl sm:h-[340px] lg:h-[420px]">
               <iframe
@@ -499,7 +536,7 @@ export default function Contact() {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
     </div>
   );

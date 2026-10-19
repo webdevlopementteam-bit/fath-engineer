@@ -1,3 +1,4 @@
+import { ProductDetail } from "@/components/Productsgrid";
 import CoreValues from "@/sections/CoreValue";
 import CustomersAndTestimonials from "@/sections/Customers";
 import HeroSection from "@/sections/Hero";

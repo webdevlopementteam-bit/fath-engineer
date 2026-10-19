@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
+import { motion } from "framer-motion";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const blogData = [
   {
@@ -60,74 +64,91 @@ const blogData = [
 ];
 
 export default function BlogPage() {
+  const transitionConfig = {
+    duration: 0.85,
+    ease: [0.25, 0.1, 0.25, 1],
+  };
+
   return (
-    <main className="min-h-screen bg-[#faf9f7] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-      <div className="mx-auto max-w-7xl">
-        <section
-          aria-label="Latest blog posts"
-          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7"
-        >
-          {blogData.map((blog) => (
-            <article
-              key={blog.slug}
-              className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow-[0_8px_30px_-18px_rgba(15,23,42,0.22)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#AF0020]/20 hover:shadow-[0_24px_50px_-24px_rgba(15,23,42,0.3)]"
-            >
-              <div className="px-6 pt-6 pb-5 sm:px-7 sm:pt-7">
-                <span className="mb-4 inline-flex w-fit items-center rounded-full border border-[#AF0020]/15 bg-[#AF0020]/[0.06] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[#AF0020]">
-                  Blog
-                </span>
+    <>
+      <Breadcrumb title={"Blog"} />
+      <main className="min-h-screen bg-[#faf9f7] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+        <div className="mx-auto max-w-7xl">
+          <section
+            aria-label="Latest blog posts"
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7"
+          >
+            {blogData.map((blog, index) => {
+              // Even index slides from left, odd index slides from right
+              const isLeft = index % 2 === 0;
 
-                <h2 className="text-[19px] font-semibold font-serif leading-[1.35] tracking-[-0.025em] text-slate-900 transition-colors duration-200 group-hover:text-[#AF0020] sm:text-lg">
-                  <Link
-                    href={`/blog/${blog.slug}`}
-                    className="rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#AF0020] focus-visible:ring-offset-4"
-                  >
-                    {blog.heading}
-                  </Link>
-                </h2>
-              </div>
+              return (
+                <motion.article
+                  key={blog.slug}
+                  initial={{ opacity: 0, x: isLeft ? -55 : 55 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={transitionConfig}
+                  className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow-[0_8px_30px_-18px_rgba(15,23,42,0.22)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#AF0020]/20 hover:shadow-[0_24px_50px_-24px_rgba(15,23,42,0.3)]"
+                >
+                  <div className="px-6 pt-6 pb-5 sm:px-7 sm:pt-7">
+                    <span className="mb-4 inline-flex w-fit items-center rounded-full border border-[#AF0020]/15 bg-[#AF0020]/[0.06] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[#AF0020]">
+                      Blog
+                    </span>
 
-              <Link
-                href={`/blog/${blog.slug}`}
-                aria-label={`Read ${blog.heading}`}
-                className="relative mx-5 block aspect-[16/10] overflow-hidden rounded-2xl bg-slate-100 sm:mx-6"
-              >
-                <Image
-                  src={blog.img}
-                  alt={blog.heading}
-                  fill
-                  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/15 via-transparent to-transparent opacity-70" />
-              </Link>
-
-              <div className="flex flex-1 flex-col px-6 pt-5 pb-6 sm:px-7 sm:pt-6 sm:pb-7">
-                <p className="text-[15px] leading-7 text-slate-600 sm:text-base">
-                  {blog.description}
-                </p>
-
-                <div className="mt-auto flex items-center justify-between gap-4 border-t border-slate-100 pt-5 mt-6">
-                  <time className="text-xs font-medium tracking-wide text-slate-500 sm:text-sm">
-                    {blog.date}
-                  </time>
+                    <h2 className="text-[19px] font-semibold font-serif leading-[1.35] tracking-[-0.025em] text-slate-900 transition-colors duration-200 group-hover:text-[#AF0020] sm:text-lg">
+                      <Link
+                        href={`/blog/${blog.slug}`}
+                        className="rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#AF0020] focus-visible:ring-offset-4"
+                      >
+                        {blog.heading}
+                      </Link>
+                    </h2>
+                  </div>
 
                   <Link
                     href={`/blog/${blog.slug}`}
-                    className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#AF0020]/[0.06] px-4 py-2.5 text-sm font-semibold text-[#AF0020] transition-all duration-200 hover:bg-[#AF0020] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#AF0020] focus-visible:ring-offset-2"
+                    aria-label={`Read ${blog.heading}`}
+                    className="relative mx-5 block aspect-[16/10] overflow-hidden rounded-2xl bg-slate-100 sm:mx-6"
                   >
-                    Read More
-                    <FaArrowRight
-                      aria-hidden="true"
-                      className="h-3 w-3 transition-transform duration-200 group-hover:translate-x-1"
+                    <Image
+                      src={blog.img}
+                      alt={blog.heading}
+                      fill
+                      sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
                     />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/15 via-transparent to-transparent opacity-70" />
                   </Link>
-                </div>
-              </div>
-            </article>
-          ))}
-        </section>
-      </div>
-    </main>
+
+                  <div className="flex flex-1 flex-col px-6 pt-5 pb-6 sm:px-7 sm:pt-6 sm:pb-7">
+                    <p className="text-[15px] leading-7 text-slate-600 sm:text-base">
+                      {blog.description}
+                    </p>
+
+                    <div className="mt-auto flex items-center justify-between gap-4 border-t border-slate-100 pt-5 mt-6">
+                      <time className="text-xs font-medium tracking-wide text-slate-500 sm:text-sm">
+                        {blog.date}
+                      </time>
+
+                      <Link
+                        href={`/blog/${blog.slug}`}
+                        className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#AF0020]/[0.06] px-4 py-2.5 text-sm font-semibold text-[#AF0020] transition-all duration-200 hover:bg-[#AF0020] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#AF0020] focus-visible:ring-offset-2"
+                      >
+                        Read More
+                        <FaArrowRight
+                          aria-hidden="true"
+                          className="h-3 w-3 transition-transform duration-200 group-hover:translate-x-1"
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                </motion.article>
+              );
+            })}
+          </section>
+        </div>
+      </main>
+    </>
   );
 }
