@@ -1,188 +1,233 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
-import { Maximize2 } from "lucide-react";
 
-// --- Zoomable Image Viewer Component ---
-function ZoomableImage({ src, alt }) {
-  const containerRef = useRef(null);
+import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight, Maximize2, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
+function ZoomableImage({
+  src,
+  index,
+  onNext,
+  onPrev,
+  hasMultiple,
+  onOpenModal,
+}) {
   const [isZoomed, setIsZoomed] = useState(false);
-  const [lensPos, setLensPos] = useState({ xPercent: 50, yPercent: 50 });
+  const [zoomOrigin, setZoomOrigin] = useState("center center");
+  const touchStartXRef = useRef(0);
 
-  const handleMouseMove = (e) => {
-    if (!containerRef.current) return;
-    const rect = containerRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+  const handleMouseMove = (event) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
 
-    const xPercent = Math.max(0, Math.min(100, (x / rect.width) * 100));
-    const yPercent = Math.max(0, Math.min(100, (y / rect.height) * 100));
+    setZoomOrigin(`${x}% ${y}%`);
+  };
 
-    setLensPos({ xPercent, yPercent });
+  const toggleZoom = () => setIsZoomed((zoomed) => !zoomed);
+
+  const handleTouchStart = (event) => {
+    touchStartXRef.current = event.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (event) => {
+    const now = Date.now();
+    if (now - (event.currentTarget.lastTap || 0) < 300) {
+      toggleZoom();
+    }
+    event.currentTarget.lastTap = now;
+
+    // Swipe logic for mobile image change
+    if (!isZoomed && hasMultiple) {
+      const touchEndX = event.changedTouches[0].clientX;
+      const diff = touchStartXRef.current - touchEndX;
+      const minSwipeDistance = 50;
+
+      if (diff > minSwipeDistance) {
+        onNext(); // Swipe Left -> Next Image
+      } else if (diff < -minSwipeDistance) {
+        onPrev(); // Swipe Right -> Previous Image
+      }
+    }
   };
 
   return (
-    <div
-      ref={containerRef}
-      onMouseEnter={() => setIsZoomed(true)}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={() => setIsZoomed(false)}
-      className="relative overflow-hidden w-full h-[460px] sm:h-[520px] bg-white border border-[#f3d9d9] rounded-sm p-6 flex items-center justify-center cursor-crosshair select-none"
-    >
-      <img
-        src={src}
-        alt={alt}
-        style={{
-          transformOrigin: `${lensPos.xPercent}% ${lensPos.yPercent}%`,
-          transform: isZoomed ? "scale(2.2)" : "scale(1)",
-          transition: isZoomed
-            ? "transform 0.08s ease-out"
-            : "transform 0.3s ease-in-out",
-        }}
-        className="max-h-full max-w-full object-contain pointer-events-none will-change-transform"
-      />
-
-      <div className="absolute top-4 right-4 text-gray-400 bg-white/70 p-1 rounded pointer-events-none">
-        <Maximize2 size={18} />
+    <div className="relative h-[340px] w-full select-none overflow-hidden rounded-md border border-gray-200 bg-white p-6 sm:h-[420px]">
+      <div
+        onMouseEnter={() => setIsZoomed(true)}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={() => setIsZoomed(false)}
+        onDoubleClick={toggleZoom}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        className="relative h-full w-full cursor-zoom-in"
+      >
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={src}
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: isZoomed ? 2.2 : 1 }}
+            exit={{ opacity: 0, scale: 0.85 }}
+            transition={{ duration: isZoomed ? 0.12 : 0.3 }}
+            style={{ transformOrigin: zoomOrigin }}
+            className="pointer-events-none relative h-full w-full"
+          >
+            <Image
+              src={src}
+              alt={`Image ${index + 1}`}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-contain"
+              priority={index === 0}
+            />
+          </motion.div>
+        </AnimatePresence>
       </div>
+
+      {hasMultiple && (
+        <>
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
+              onPrev();
+            }}
+            aria-label="Previous image"
+            className="absolute left-3 top-1/2 z-10 hidden -translate-y-1/2 items-center justify-center rounded-full bg-white/90 p-2 text-gray-800 shadow md:flex"
+          >
+            <ChevronLeft size={20} />
+          </button>
+
+          <button
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
+              onNext();
+            }}
+            aria-label="Next image"
+            className="absolute right-3 top-1/2 z-10 hidden -translate-y-1/2 items-center justify-center rounded-full bg-white/90 p-2 text-gray-800 shadow md:flex"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </>
+      )}
+
+      <button
+        type="button"
+        onClick={(e) => {
+          e.stopPropagation();
+          onOpenModal();
+        }}
+        aria-label="View full image"
+        className="absolute right-4 top-4 z-10 rounded-md border border-gray-100 bg-white/80 p-1.5 text-gray-500 shadow-sm transition hover:bg-white hover:text-gray-800"
+      >
+        <Maximize2 size={16} />
+      </button>
     </div>
   );
 }
 
-// --- Single Product Layout Component ---
-export function ProductDetail({ product }) {
+export function ProductGallery({ images = [] }) {
   const [selectedImage, setSelectedImage] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    setSelectedImage(0);
-  }, [product.id]);
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isModalOpen]);
 
-  if (!product) return null;
+  if (!images.length) return null;
+
+  const nextImage = () => {
+    setSelectedImage((current) => (current + 1) % images.length);
+  };
+
+  const previousImage = () => {
+    setSelectedImage(
+      (current) => (current - 1 + images.length) % images.length,
+    );
+  };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
-      {/* 
-        Parent container mein 'items-start' zaroori hai sticky effect ke liye.
-        'overflow-hidden' yahan nahi hona chahiye.
-      */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-        {/* LEFT COLUMN: Sticky jab tak right side pura scroll na ho jaye */}
-        <div className="lg:col-span-5 sticky top-6 self-start flex flex-col gap-3">
-          <ZoomableImage
-            src={product.images[selectedImage]}
-            alt={product.title}
-          />
+    <div className="w-full">
+      <div className="flex flex-col gap-3.5">
+        <ZoomableImage
+          src={images[selectedImage]}
+          index={selectedImage}
+          onNext={nextImage}
+          onPrev={previousImage}
+          hasMultiple={images.length > 1}
+          onOpenModal={() => setIsModalOpen(true)}
+        />
 
-          {/* Optional Thumbnails: Only visible if product has more than 1 image */}
-          {product.images?.length > 1 && (
-            <div className="flex gap-2.5 overflow-x-auto py-1">
-              {product.images.map((img, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => setSelectedImage(idx)}
-                  className={`w-16 h-16 border rounded-sm p-1 bg-white flex items-center justify-center transition-all ${
-                    selectedImage === idx
-                      ? "border-red-400 ring-1 ring-red-300"
-                      : "border-gray-200 hover:border-gray-300 opacity-70 hover:opacity-100"
-                  }`}
-                >
-                  <img
-                    src={img}
-                    alt={`Thumbnail ${idx + 1}`}
-                    className="max-h-full max-w-full object-contain"
-                  />
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* RIGHT COLUMN: Long scrollable content with dynamic tables */}
-        <div className="lg:col-span-7 flex flex-col space-y-6">
-          {/* Product Title */}
-          <h1 className="text-2xl sm:text-[28px] font-serif font-bold text-gray-900 tracking-tight leading-snug">
-            {product.title}
-          </h1>
-
-          {/* Description */}
-          <p className="text-[13.5px] sm:text-[14px] text-gray-700 leading-relaxed text-justify">
-            {product.description}
-          </p>
-
-          {/* Dynamic Tables rendering (1, 2, or 3 tables) */}
-          <div className="flex flex-col gap-6 pt-1">
-            {product.tables?.map((table, tIdx) => (
-              <div
-                key={tIdx}
-                className="border border-gray-200/90 rounded-sm overflow-hidden bg-white shadow-xs"
+        {images.length > 1 && (
+          <div className="grid grid-cols-5 gap-3">
+            {images.map((image, index) => (
+              <button
+                key={`${image}-${index}`}
+                type="button"
+                onClick={() => setSelectedImage(index)}
+                aria-label={`Show image ${index + 1}`}
+                aria-current={selectedImage === index}
+                className={`relative aspect-square overflow-hidden rounded-md border bg-white p-1 transition ${
+                  selectedImage === index
+                    ? "border-red-700"
+                    : "border-gray-200 opacity-70 hover:opacity-100"
+                }`}
               >
-                {/* Header banner if title exists */}
-                {table.title && (
-                  <div className="bg-[#525252] text-white px-4 py-2 text-center font-bold text-xs sm:text-[13px] tracking-wider uppercase select-none">
-                    {table.title}
-                  </div>
-                )}
-
-                {/* Table Rows */}
-                <div className="divide-y divide-gray-100 text-[13px] sm:text-[13.5px]">
-                  {table.rows?.map((row, rIdx) => (
-                    <div
-                      key={rIdx}
-                      className="grid grid-cols-2 px-4 py-2.5 hover:bg-gray-50/70 transition-colors items-center"
-                    >
-                      <span className="font-semibold text-gray-800">
-                        {row.label}
-                      </span>
-                      <span className="text-gray-600 font-normal">
-                        {row.value}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+                <Image
+                  src={image}
+                  alt={`Thumbnail ${index + 1}`}
+                  fill
+                  sizes="80px"
+                  className="object-contain"
+                />
+              </button>
             ))}
           </div>
-        </div>
+        )}
       </div>
-    </div>
-  );
-}
 
-// --- Main App Wrapper ---
-export default function App() {
-  // Aapka data array (Nested structure flat karke use kiya hai)
-  const productList = products.flat();
-  const [activeId, setActiveId] = useState(productList[0]?.id);
-
-  const currentProduct = productList.find((p) => p.id === activeId);
-
-  return (
-    <div className="min-h-screen bg-[#fafafa]">
-      {/* Switcher bar to test between prod-1 and prod-2 */}
-      <div className="border-b border-gray-200 bg-white py-3 px-6 flex items-center justify-between">
-        <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">
-          Select Product
-        </span>
-        <div className="flex gap-2">
-          {productList.map((p) => (
-            <button
-              key={p.id}
-              onClick={() => setActiveId(p.id)}
-              className={`px-3 py-1 text-xs rounded border transition-colors ${
-                activeId === p.id
-                  ? "bg-gray-900 text-white border-gray-900"
-                  : "bg-white text-gray-700 border-gray-200 hover:border-gray-400"
-              }`}
+      {/* Modal / Fullscreen View */}
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+            onClick={() => setIsModalOpen(false)}
+          >
+            <div
+              className="relative max-h-[90vh] max-w-[90vw] overflow-hidden rounded-lg bg-white p-4"
+              onClick={(e) => e.stopPropagation()}
             >
-              {p.id}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <main>
-        {currentProduct && <ProductDetail product={currentProduct} />}
-      </main>
+              <button
+                type="button"
+                onClick={() => setIsModalOpen(false)}
+                className="absolute right-3 top-3 z-20 rounded-full bg-gray-100 p-2 text-gray-700 hover:bg-gray-200"
+              >
+                <X size={20} />
+              </button>
+              <div className="relative h-[70vh] w-[70vw] min-w-[350px]">
+                <Image
+                  src={images[selectedImage]}
+                  alt="Full view"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

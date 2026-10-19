@@ -27,15 +27,7 @@ const navLinks = [
 ];
 
 function getProductHref(product) {
-  const slug =
-    product.slug ||
-    String(product.name || product.title || "")
-      .toLowerCase()
-      .trim()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-|-$/g, "");
-
-  return `/products/${slug}`;
+  return `/products/${product.slug}`;
 }
 
 function SearchBox({
@@ -188,16 +180,15 @@ function SearchBox({
             </div>
           </div>
 
-          {/* Exactly ONE result state is rendered */}
+          {/* Results List */}
           {hasResults ? (
             <div className="min-h-0 max-h-[min(55dvh,370px)] flex-1 space-y-2 overflow-y-auto overscroll-contain p-2.5 sm:p-3">
-              {filteredProducts.map((product, index) => {
-                const imageSrc =
-                  product.image || product.imageUrl || product.thumbnail;
+              {filteredProducts.map((product) => {
+                const imageSrc = product.path || product.image;
 
                 return (
                   <Link
-                    key={product.slug || product.id || index}
+                    key={product.slug}
                     href={getProductHref(product)}
                     onClick={handleLinkClick}
                     className="group flex items-center gap-3 rounded-2xl border border-gray-100 bg-white p-2.5 transition duration-200 hover:border-red-100 hover:bg-[#FFF8F8] hover:shadow-sm"
@@ -206,10 +197,10 @@ function SearchBox({
                       {imageSrc ? (
                         <Image
                           src={imageSrc}
-                          alt={product.name || product.title || "Product"}
+                          alt={product.name}
                           fill
                           sizes="68px"
-                          className="object-contain p-2 transition-transform duration-300 group-hover:scale-110"
+                          className="object-contain p-1 transition-transform duration-300 group-hover:scale-110"
                         />
                       ) : (
                         <PackageSearch
@@ -221,14 +212,8 @@ function SearchBox({
 
                     <div className="min-w-0 flex-1">
                       <p className="line-clamp-2 text-[12px] font-extrabold leading-5 text-gray-800 group-hover:text-[#A4001D]">
-                        {product.name || product.title || "Untitled Product"}
+                        {product.name}
                       </p>
-
-                      {product.category && (
-                        <span className="mt-1.5 inline-block max-w-full truncate rounded-md border border-red-50 bg-red-50/80 px-2 py-1 text-[10px] font-semibold text-[#A4001D]">
-                          {product.category}
-                        </span>
-                      )}
                     </div>
 
                     <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-gray-50 text-gray-400 transition group-hover:bg-[#A4001D] group-hover:text-white">
@@ -298,22 +283,10 @@ export default function Navbar() {
 
     if (!query) return [];
 
-    return (products || [])
-      .filter((product) => {
-        const searchableText = [
-          product.name,
-          product.title,
-          product.slug,
-          product.category,
-          product.description,
-        ]
-          .filter(Boolean)
-          .join(" ")
-          .toLowerCase();
-
-        return searchableText.includes(query);
-      })
-      .slice(0, 6);
+    return (products || []).filter((product) => {
+      const searchableText = `${product.name} ${product.slug}`.toLowerCase();
+      return searchableText.includes(query);
+    });
   }, [searchQuery]);
 
   const handleLinkClick = useCallback(() => {
@@ -324,7 +297,6 @@ export default function Navbar() {
   useEffect(() => {
     const handleOutsideClick = (event) => {
       const insideDesktop = desktopSearchRef.current?.contains(event.target);
-
       const insideMobile = mobileSearchRef.current?.contains(event.target);
 
       if (!insideDesktop && !insideMobile) {

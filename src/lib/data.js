@@ -1,7 +1,7 @@
-export const product = [
+export const products = [
   {
     name: "Auto deflashing Blow Moulding Machine Manufacturer in Telangana",
-    path: "/products/Auto deflashing Blow Moulding Machine Manufacturer in Telangana.png",
+    path: "/products/a1.png",
     slug: "auto-deflashing-blow-moulding-machine-manufacturer-in-telangana",
   },
   {
@@ -220,10 +220,7 @@ export const productsgrid = [
         "Auto deflashing Blow Moulding Machine Manufacturer in Uttar Pradesh",
       description:
         "1 Litre Triple Head Single Stage With Auto De-Flashing (Model – FEW1000H) This is one of the superior quality FEW1000H Blow Moulding Machine in the industry. As a prominent Manufacturer, Exporter and Supplier of the Auto Deflashing Blow Moulding Machine Manufacturer in Uttar Pradesh, we ensure to provide machines with best technical specifications, Not just this, Blow Moulding Machines provided by us is also available at market competitive prices.",
-      images: [
-        "/images/blow-moulding-machine-1.jpg",
-        "/images/plastic-bottles-samples.jpg",
-      ],
+      images: ["/products/s1.png", "/products/s2.png"],
       tables: [
         {
           title: "SPECIFICATION DATA",

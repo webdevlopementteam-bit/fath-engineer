@@ -16,7 +16,7 @@ const routeBackgrounds = {
     textColor: "text-[#7C2D12]",
   },
   "/products": {
-    bg: "bg-[#FAF7F2]", // Warm cream
+    bg: "bg-[#FFE0E3]", // Warm cream
     textColor: "text-[#4A2E1B]",
   },
   "/gallery": {

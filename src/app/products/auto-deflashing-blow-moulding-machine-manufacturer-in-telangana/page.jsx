@@ -1,19 +1,20 @@
-
 import React from "react";
+import Auto from "./Auto";
 
 export const metadata = {
   title: "",
   description: "",
   keywords: ["", ""],
   alternates: {
-    canonical: "/products/auto-deflashing-blow-moulding-machine-manufacturer-in-telangana",
+    canonical:
+      "/products/auto-deflashing-blow-moulding-machine-manufacturer-in-telangana",
   },
 };
 
 function Page() {
   return (
     <>
-      {/* Add product-specific content here */}
+      <Auto />
     </>
   );
 }
