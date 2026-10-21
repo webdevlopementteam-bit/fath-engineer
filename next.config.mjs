@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  allowedDevOrigins: ["192.168.1.48", "192.168.1.41"],
+  allowedDevOrigins: ["192.168.1.11", "192.168.1.41"],
   /* config options here */
   experimental: {
     agentFeedback: true,
