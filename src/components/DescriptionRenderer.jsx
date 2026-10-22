@@ -5,6 +5,17 @@ export default function DescriptionRenderer({ blocks = [] }) {
 
   return (
     <div className="space-y-7 text-[16px] leading-7 text-gray-700 sm:space-y-8 sm:text-[17px] sm:leading-8">
+      {/* Beautiful Top Description Heading */}
+      <div className="border-b border-gray-150 pb-5">
+        <span className="text-[11px] font-bold uppercase tracking-widest text-[#B00020]">
+          Technical Overview
+        </span>
+        <h2 className="mt-1 bg-gradient-to-r from-[#850019] via-[#B00020] to-[#D20B19] bg-clip-text text-2xl font-black tracking-tight text-transparent sm:text-3xl lg:text-4xl">
+          Product Description & Details
+        </h2>
+        <div className="mt-2.5 h-1 w-20 rounded-full bg-gradient-to-r from-[#850019] to-[#D20B19]" />
+      </div>
+
       {blocks.map((block, idx) => {
         if (!block) return null;
 
@@ -49,7 +60,9 @@ export default function DescriptionRenderer({ blocks = [] }) {
                     ) : (
                       <span
                         key={i}
-                        className={seg?.bold ? "font-semibold text-gray-900" : ""}
+                        className={
+                          seg?.bold ? "font-semibold text-gray-900" : ""
+                        }
                       >
                         {seg?.text || ""}
                       </span>

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaRegCalendarAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Breadcrumb from "@/components/Breadcrumb";
 
@@ -63,84 +63,126 @@ const blogData = [
   },
 ];
 
+// Double slash (//) se bachne ke liye clean URL helper
+const getBlogHref = (slug = "") => {
+  const clean = slug.replace(/^\/+/, "");
+  return `/blog/${clean}`;
+};
+
 export default function BlogPage() {
   const transitionConfig = {
-    duration: 0.85,
+    duration: 0.75,
     ease: [0.25, 0.1, 0.25, 1],
   };
 
   return (
     <>
       <Breadcrumb title={"Blog"} />
-      <main className="min-h-screen bg-[#faf9f7] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-        <div className="mx-auto max-w-7xl">
+
+      <main className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#FFF9F9] via-[#faf9f7] to-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+        {/* Subtle decorative background glow */}
+        <div className="pointer-events-none absolute -top-24 left-1/2 h-72 w-[600px] -translate-x-1/2 rounded-full bg-[#AF0020]/5 blur-3xl" />
+
+        <div className="relative mx-auto max-w-7xl">
+          {/* Attractive Section Header */}
+          <div className="mb-12 text-center sm:mb-16">
+            <span className="inline-flex items-center gap-2 rounded-full border border-[#AF0020]/20 bg-[#AF0020]/[0.06] px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#AF0020]">
+              Industry Insights & Guides
+            </span>
+
+            <h1 className="mt-3.5 bg-gradient-to-r from-slate-950 via-[#850019] to-[#D20B19] bg-clip-text text-3xl font-black tracking-tight text-transparent sm:text-4xl lg:text-5xl">
+              Latest Machinery Articles & Buying Guides
+            </h1>
+
+            <div className="mx-auto mt-4 flex items-center justify-center gap-1.5">
+              <span className="h-1.5 w-3 rounded-full bg-[#AF0020]/30" />
+              <span className="h-1.5 w-16 rounded-full bg-gradient-to-r from-[#850019] to-[#D20B19]" />
+              <span className="h-1.5 w-3 rounded-full bg-[#AF0020]/30" />
+            </div>
+          </div>
+
+          {/* Blog Cards Grid */}
           <section
             aria-label="Latest blog posts"
-            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7"
+            className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8"
           >
             {blogData.map((blog, index) => {
-              // Even index slides from left, odd index slides from right
               const isLeft = index % 2 === 0;
+              const blogHref = getBlogHref(blog.slug);
 
               return (
                 <motion.article
                   key={blog.slug}
-                  initial={{ opacity: 0, x: isLeft ? -55 : 55 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
+                  initial={{ opacity: 0, x: isLeft ? -45 : 45, y: 20 }}
+                  whileInView={{ opacity: 1, x: 0, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
                   transition={transitionConfig}
-                  className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200/80 bg-white shadow-[0_8px_30px_-18px_rgba(15,23,42,0.22)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[#AF0020]/20 hover:shadow-[0_24px_50px_-24px_rgba(15,23,42,0.3)]"
+                  className="group relative flex h-full flex-col overflow-hidden rounded-[26px] border border-slate-200/80 bg-white shadow-[0_10px_35px_-18px_rgba(15,23,42,0.18)] transition-all duration-300 hover:-translate-y-2 hover:border-[#AF0020]/30 hover:shadow-[0_28px_60px_-20px_rgba(133,0,25,0.22)]"
                 >
-                  <div className="px-6 pt-6 pb-5 sm:px-7 sm:pt-7">
-                    <span className="mb-4 inline-flex w-fit items-center rounded-full border border-[#AF0020]/15 bg-[#AF0020]/[0.06] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[#AF0020]">
-                      Blog
-                    </span>
+                  {/* Top Red Accent Line on Hover */}
+                  <div className="h-1 w-full bg-gradient-to-r from-[#850019] via-[#B00020] to-[#D20B19] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                    <h2 className="text-[19px] font-semibold font-serif leading-[1.35] tracking-[-0.025em] text-slate-900 transition-colors duration-200 group-hover:text-[#AF0020] sm:text-lg">
+                  {/* Image Container */}
+                  <div className="p-3.5 pb-0 sm:p-4 sm:pb-0">
+                    <Link
+                      href={blogHref}
+                      aria-label={`Read ${blog.heading}`}
+                      className="relative block aspect-[16/10] w-full overflow-hidden rounded-2xl bg-slate-100"
+                    >
+                      <Image
+                        src={blog.img}
+                        alt={blog.heading}
+                        fill
+                        sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                      />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/50 via-slate-950/10 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
+
+                      
+                    </Link>
+                  </div>
+
+                  {/* Card Body */}
+                  <div className="flex flex-1 flex-col px-5 pt-5 pb-6 sm:px-6 sm:pt-5 sm:pb-6">
+                    {/* Date */}
+                    <div className="mb-2.5 flex items-center gap-2 text-xs font-semibold text-slate-500">
+                      <FaRegCalendarAlt className="h-3.5 w-3.5 text-[#AF0020]" />
+                      <time>{blog.date}</time>
+                    </div>
+
+                    {/* Heading */}
+                    <h2 className="line-clamp-2 text-[18px] font-extrabold leading-[1.4] tracking-tight text-slate-900 transition-colors duration-200 group-hover:text-[#AF0020] sm:text-[19px]">
                       <Link
-                        href={`/blog/${blog.slug}`}
-                        className="rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#AF0020] focus-visible:ring-offset-4"
+                        href={blogHref}
+                        className="rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#AF0020]"
                       >
                         {blog.heading}
                       </Link>
                     </h2>
-                  </div>
 
-                  <Link
-                    href={`/blog/${blog.slug}`}
-                    aria-label={`Read ${blog.heading}`}
-                    className="relative mx-5 block aspect-[16/10] overflow-hidden rounded-2xl bg-slate-100 sm:mx-6"
-                  >
-                    <Image
-                      src={blog.img}
-                      alt={blog.heading}
-                      fill
-                      sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
-                    />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/15 via-transparent to-transparent opacity-70" />
-                  </Link>
-
-                  <div className="flex flex-1 flex-col px-6 pt-5 pb-6 sm:px-7 sm:pt-6 sm:pb-7">
-                    <p className="text-[15px] leading-7 text-slate-600 sm:text-base">
+                    {/* Excerpt */}
+                    <p className="mt-3 line-clamp-3 text-[14.5px] leading-relaxed text-slate-600 sm:text-[15px]">
                       {blog.description}
                     </p>
 
-                    <div className="mt-auto flex items-center justify-between gap-4 border-t border-slate-100 pt-5 mt-6">
-                      <time className="text-xs font-medium tracking-wide text-slate-500 sm:text-sm">
-                        {blog.date}
-                      </time>
+                    {/* Footer Action */}
+                    <div className="mt-auto pt-5">
+                      <div className="flex items-center justify-between border-t border-slate-100 pt-4">
+                        <span className="text-xs font-bold uppercase tracking-wider text-slate-400 transition-colors group-hover:text-slate-600">
+                          Faith Engineering
+                        </span>
 
-                      <Link
-                        href={`/blog/${blog.slug}`}
-                        className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#AF0020]/[0.06] px-4 py-2.5 text-sm font-semibold text-[#AF0020] transition-all duration-200 hover:bg-[#AF0020] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#AF0020] focus-visible:ring-offset-2"
-                      >
-                        Read More
-                        <FaArrowRight
-                          aria-hidden="true"
-                          className="h-3 w-3 transition-transform duration-200 group-hover:translate-x-1"
-                        />
-                      </Link>
+                        <Link
+                          href={blogHref}
+                          className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#850019] to-[#D20B19] px-4 py-2 text-xs font-bold text-white shadow-sm transition-all duration-300 hover:shadow-md hover:brightness-110 active:scale-95 sm:text-[13px]"
+                        >
+                          Read Article
+                          <FaArrowRight
+                            aria-hidden="true"
+                            className="h-3 w-3 transition-transform duration-200 group-hover:translate-x-1"
+                          />
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </motion.article>
