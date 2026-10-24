@@ -21,6 +21,9 @@ export const metadata = {
   alternates: {
     canonical: "https://www.blowmouldmachinemanufacturer.com/",
   },
+  icons: {
+    icon: "/logo/logo.png",
+  },
 };
 
 export default function RootLayout({ children }) {

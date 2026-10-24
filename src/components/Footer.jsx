@@ -31,21 +31,38 @@ export default function Footer() {
       <div className="relative max-w-[96rem] mx-auto px-6 sm:px-10 lg:px-16 z-10">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_1.1fr_1.4fr] gap-x-12 gap-y-12 pb-12 border-b border-[#7a1226]/60">
-          
           {/* Column 1: About Us */}
           <motion.div {...scrollAnimation} className="space-y-6">
             <h3 className="text-xl font-serif tracking-wider uppercase text-amber-100 border-l-4 border-amber-500 pl-3 inline-block shadow-sm">
               About Us
             </h3>
             <p className="text-gray-200 text-base leading-relaxed font-light">
-              <strong className="font-semibold text-white">Faith Engineering Works</strong> is a trusted manufacturer of high-performance Blow Moulding Machines, delivering advanced, durable, and efficient industrial machinery solutions since 2000. We are committed to quality, innovation, and customer satisfaction.
+              <strong className="font-semibold text-white">
+                Faith Engineering Works
+              </strong>{" "}
+              is a trusted manufacturer of high-performance Blow Moulding
+              Machines, delivering advanced, durable, and efficient industrial
+              machinery solutions since 2000. We are committed to quality,
+              innovation, and customer satisfaction.
             </p>
             {/* Social Media Icons */}
             <div className="flex space-x-3.5 pt-2">
               {[
-                { icon: FaFacebookF, href: "https://www.facebook.com/faithengineeringworks?rdid=vgYo5nUO3YGwRb3U&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1D4AuESQj3%2F#", label: "Facebook" },
-                { icon: FaInstagram, href: "https://www.instagram.com/faithengieeringworks?igsh=YnBnNnltYTltZWJ5%20", label: "Instagram" },
-                { icon: FaYoutube, href: "https://www.youtube.com/@faithengineeringworksnewdelhi", label: "YouTube" },
+                {
+                  icon: FaFacebookF,
+                  href: "https://www.facebook.com/faithengineeringworks?rdid=vgYo5nUO3YGwRb3U&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1D4AuESQj3%2F#",
+                  label: "Facebook",
+                },
+                {
+                  icon: FaInstagram,
+                  href: "https://www.instagram.com/faithengieeringworks?igsh=YnBnNnltYTltZWJ5%20",
+                  label: "Instagram",
+                },
+                {
+                  icon: FaYoutube,
+                  href: "https://www.youtube.com/@faithengineeringworksnewdelhi",
+                  label: "YouTube",
+                },
               ].map(({ icon: Icon, href, label }, idx) => (
                 <a
                   key={idx}
@@ -73,11 +90,11 @@ export default function Footer() {
             <ul className="space-y-3.5 text-base">
               {[
                 { name: "HOME", href: "/" },
-                { name: "ABOUT US", href: "/about" },
+                { name: "ABOUT US", href: "/about-us" },
                 { name: "PRODUCTS", href: "/products" },
                 { name: "GALLERY", href: "/gallery" },
                 { name: "GLOBAL EXPORT", href: "/global-export" },
-                { name: "CONTACT US", href: "/contact" },
+                { name: "CONTACT US", href: "/contact-us" },
               ].map((link, idx) => (
                 <li key={idx}>
                   <Link
@@ -87,7 +104,9 @@ export default function Footer() {
                     <span className="inline-flex items-center justify-center w-5 mr-2 text-amber-400 group-hover:translate-x-1.5 transition-transform duration-200">
                       <FaArrowRight className="text-xs" />
                     </span>
-                    <span className="group-hover:translate-x-1 transition-transform duration-200">{link.name}</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-200">
+                      {link.name}
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -105,9 +124,34 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3.5 text-base">
               {[
-                { name: "Plastic Blow Moulding Machine", href: "/products/plastic-blow-moulding-machine" },
-                { name: "Blow Moulding Machines", href: "/products/blow-moulding-machines" },
-                { name: "HDPE Blow Moulding Machine", href: "/products/hdpe-blow-moulding-machine" },
+                {
+                  name: "5 Liter Single Head Single Stage Blow Molding Machine",
+                  href: "/products/5-liter-single-head-single-stage-blow-molding-machine",
+                },
+                {
+                  name: "High-Speed Blow Molding Machine",
+                  href: "/products/high-speed-blow-molding-machine",
+                },
+                {
+                  name: "Auto Deflashing Blow Moulding Machine Manufacturer in Delhi",
+                  href: "/products/auto-deflashing-blow-moulding-machine-manufacturer",
+                },
+                {
+                  name: "Faith 1 Liter Single Head Single Stage Blow Molding Machine With V-Strip",
+                  href: "/products/faith-1-liter-single-head-single-stage-blow-molding-machine-with-v-strip",
+                },
+                {
+                  name: "250ml Double Stage Triple Head Blow Molding Machine",
+                  href: "/products/250ml-double-stage-triple-head-blow-molding-machine",
+                },
+                {
+                  name: "Accumulator Blow Moulding Machine Manufacturer",
+                  href: "/products/accumulator-blow-moulding-machine-manufacturer",
+                },
+                {
+                  name: "1 Litre Triple Head Double Stage With Auto De-Flashing System",
+                  href: "/products/2ltr-triple-head-double-station-with-auto-de-flashing-system",
+                },
               ].map((product, idx) => (
                 <li key={idx}>
                   <Link
@@ -117,7 +161,9 @@ export default function Footer() {
                     <span className="inline-flex items-center justify-center w-5 mr-2 text-amber-400 shrink-0 group-hover:translate-x-1.5 transition-transform duration-200 mt-0.5">
                       <FaArrowRight className="text-xs" />
                     </span>
-                    <span className="group-hover:translate-x-1 transition-transform duration-200">{product.name}</span>
+                    <span className="group-hover:translate-x-1 transition-transform duration-200">
+                      {product.name}
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -193,7 +239,8 @@ export default function Footer() {
                 <p className="text-gray-200 mt-2 leading-relaxed text-sm font-light">
                   <strong className="font-semibold text-white">Unit: II</strong>
                   <br />
-                  Plot No-728, Khasra No-154 Near Beakon Public School, Pooth Khurd, Delhi-110039
+                  Plot No-728, Khasra No-154 Near Beakon Public School, Pooth
+                  Khurd, Delhi-110039
                 </p>
               </div>
             </div>
@@ -219,7 +266,7 @@ export default function Footer() {
                 href="https://www.cybertricksmedia.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-amber-200 hover:text-amber-400 font-semibold underline underline-offset-4 decoration-amber-500/50 transition-colors"
+                className="text-amber-200 hover:text-amber-400 font-semibold  decoration-amber-500/50 transition-colors"
               >
                 CYBERTRICKS Media Pvt Ltd
               </a>

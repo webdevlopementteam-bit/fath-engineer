@@ -43,6 +43,12 @@ const exhibitions = [
 ];
 
 export default function ExhibitionsSection() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const swiperRefs = useRef({});
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -74,6 +80,16 @@ export default function ExhibitionsSection() {
       document.body.style.overflow = "auto";
     };
   }, [selectedImage]);
+
+  // Prevent server-client mismatch during SSR prerender
+  if (!isMounted) {
+    return (
+      <>
+        <Breadcrumb title="Gallery" />
+        <div className="min-h-[60vh] bg-[#FFF9F5] flex items-center justify-center"></div>
+      </>
+    );
+  }
 
   return (
     <>
@@ -187,7 +203,6 @@ export default function ExhibitionsSection() {
                       const imgSrc = `/gallery/${item.folder}/${img}`;
                       return (
                         <SwiperSlide key={imgIdx} className="h-full">
-                          {/* Mobile height decreased to h-[210px] and width maximized */}
                           <div
                             onClick={() =>
                               setSelectedImage({

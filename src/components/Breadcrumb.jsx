@@ -271,7 +271,7 @@ export default function Breadcrumb({ title, subtitle }) {
                 </svg>
                 <span
                   aria-current="page"
-                  className="rounded-full bg-gradient-to-r from-[#B8021F]/12 to-[#B8021F]/[0.06] px-3.5 py-1 font-semibold capitalize text-[#800018]"
+                  className="rounded-full bg-gradient-to-r from-[#B8021F]/12 to-[#B8021F]/[0.06] px-3.5 py-1 font-semibold  capitalize text-[#800018]"
                 >
                   {title}
                 </span>

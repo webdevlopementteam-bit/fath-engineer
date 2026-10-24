@@ -86,11 +86,11 @@ export default function BlogPage() {
         <div className="relative mx-auto max-w-7xl">
           {/* Attractive Section Header */}
           <div className="mb-12 text-center sm:mb-16">
-            <span className="inline-flex items-center gap-2 rounded-full border border-[#AF0020]/20 bg-[#AF0020]/[0.06] px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#AF0020]">
+            <span className="inline-flex items-center gap-2 rounded-full  border border-[#AF0020]/20 bg-[#AF0020]/[0.06] px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#AF0020]">
               Industry Insights & Guides
             </span>
 
-            <h1 className="mt-3.5 bg-gradient-to-r from-slate-950 via-[#850019] to-[#D20B19] bg-clip-text text-3xl font-black tracking-tight text-transparent sm:text-4xl lg:text-5xl">
+            <h1 className="mt-3.5 bg-gradient-to-r from-slate-950 via-[#850019] to-[#D20B19] bg-clip-text text-3xl font-black font-serif tracking-tight text-transparent sm:text-4xl lg:text-5xl">
               Latest Machinery Articles & Buying Guides
             </h1>
 
@@ -137,8 +137,6 @@ export default function BlogPage() {
                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                       />
                       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/50 via-slate-950/10 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-40" />
-
-                      
                     </Link>
                   </div>
 
@@ -151,7 +149,7 @@ export default function BlogPage() {
                     </div>
 
                     {/* Heading */}
-                    <h2 className="line-clamp-2 text-[18px] font-extrabold leading-[1.4] tracking-tight text-slate-900 transition-colors duration-200 group-hover:text-[#AF0020] sm:text-[19px]">
+                    <h2 className="line-clamp-2 text-[18px] font-extrabold font-serif leading-[1.4] tracking-tight text-slate-900 transition-colors duration-200 group-hover:text-[#AF0020] sm:text-[19px]">
                       <Link
                         href={blogHref}
                         className="rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#AF0020]"

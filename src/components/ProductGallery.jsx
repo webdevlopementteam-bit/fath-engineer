@@ -53,7 +53,15 @@ function ZoomableImage({
   if (!src) return null;
 
   return (
-    <div className="relative h-[380px] w-full select-none overflow-hidden rounded-xl border border-gray-200 bg-white p-6 sm:h-[460px]">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.85 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 1.1,
+        ease: [0.22, 1, 0.36, 1], // Ultra-smooth cubic-bezier curve
+      }}
+      className="relative h-[380px] w-full select-none overflow-hidden rounded-xl border border-gray-200 bg-white p-6 sm:h-[460px]"
+    >
       <div
         onMouseEnter={() => setIsZoomed(true)}
         onMouseMove={handleMouseMove}
@@ -66,10 +74,13 @@ function ZoomableImage({
         <AnimatePresence mode="wait">
           <motion.div
             key={src}
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0, scale: isZoomed ? 1 : 0.9 }}
             animate={{ opacity: 1, scale: isZoomed ? 2.1 : 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: isZoomed ? 0.12 : 0.25 }}
+            exit={{ opacity: 0, scale: 0.94 }}
+            transition={{
+              duration: isZoomed ? 0.35 : 0.7,
+              ease: [0.25, 1, 0.5, 1],
+            }}
             style={{ transformOrigin: zoomOrigin }}
             className="pointer-events-none relative h-full w-full"
           >
@@ -124,7 +135,7 @@ function ZoomableImage({
       >
         <Maximize2 size={16} />
       </button>
-    </div>
+    </motion.div>
   );
 }
 
@@ -172,11 +183,23 @@ export function ProductGallery({ images = [] }) {
         />
 
         {safeImages.length > 1 && (
-          <div className="flex flex-wrap gap-2.5">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.3,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="flex flex-wrap gap-2.5"
+          >
             {safeImages.map((image, index) => (
-              <button
+              <motion.button
                 key={`${image}-${index}`}
                 type="button"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.96 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
                 onClick={() => setSelectedImage(index)}
                 aria-label={`Show image ${index + 1}`}
                 className={`relative h-20 w-20 overflow-hidden rounded-md border bg-white p-1 transition cursor-pointer ${
@@ -192,9 +215,9 @@ export function ProductGallery({ images = [] }) {
                   sizes="80px"
                   className="object-contain"
                 />
-              </button>
+              </motion.button>
             ))}
-          </div>
+          </motion.div>
         )}
       </div>
 
@@ -205,10 +228,18 @@ export function ProductGallery({ images = [] }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
             onClick={() => setIsModalOpen(false)}
           >
-            <div
+            <motion.div
+              initial={{ opacity: 0, scale: 0.82 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.88 }}
+              transition={{
+                duration: 0.55,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="relative max-h-[90vh] max-w-[90vw] overflow-hidden rounded-xl bg-white p-4"
               onClick={(e) => e.stopPropagation()}
             >
@@ -228,7 +259,7 @@ export function ProductGallery({ images = [] }) {
                   className="object-contain"
                 />
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

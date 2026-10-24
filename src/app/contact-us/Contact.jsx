@@ -173,7 +173,7 @@ export default function Contact() {
             We’re Here to Help
           </span>
 
-          <h1 className="mt-5 text-3xl font-bold tracking-tight text-stone-900 sm:text-4xl lg:text-5xl">
+          <h1 className="mt-5 text-3xl font-bold font-serif tracking-tight text-stone-900 sm:text-4xl lg:text-5xl">
             Get in Touch{" "}
             <span className="bg-gradient-to-r from-[#AF0020] to-[#7A0016] bg-clip-text text-transparent">
               With Us
@@ -450,7 +450,7 @@ export default function Contact() {
                 <span className="inline-block rounded-full bg-white/15 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-white/90 backdrop-blur-sm">
                   Contact Information
                 </span>
-                <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
+                <h2 className="mt-3 text-2xl font-bold tracking-tight  sm:text-3xl">
                   Let’s Connect
                 </h2>
                 <p className="mt-2 text-sm leading-relaxed text-white/85 sm:text-base">

@@ -12,7 +12,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/auto-deflashing-blow-moulding-machine-manufacturer-in-telangana/",
+          "https://www.blowmouldmachinemanufacturer.com/products/auto-deflashing-blow-moulding-machine-manufacturer-in-telangana/",
       },
     },
     category: "Blow Moulding Machines",
@@ -393,7 +393,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/automatic-blow-moulding-machine-manufacturer-in-jharkhand/",
+          "https://www.blowmouldmachinemanufacturer.com/products/automatic-blow-moulding-machine-manufacturer-in-jharkhand/",
       },
     },
 
@@ -713,7 +713,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/auto-deflashing-blow-moulding-machine-manufacturer-in-uttar-pradesh/",
+          "https://www.blowmouldmachinemanufacturer.com/products/auto-deflashing-blow-moulding-machine-manufacturer-in-uttar-pradesh/",
       },
     },
     category: "Blow Moulding Machines",
@@ -1128,7 +1128,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/automatic-blow-moulding-machine-manufacturer-in-uttarakhand/",
+          "https://www.blowmouldmachinemanufacturer.com/products/automatic-blow-moulding-machine-manufacturer-in-uttarakhand/",
       },
     },
     category: "Blow Moulding Machines",
@@ -1516,7 +1516,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/automatic-blow-moulding-machine-manufacturer-in-telangana/",
+          "https://www.blowmouldmachinemanufacturer.com/products/automatic-blow-moulding-machine-manufacturer-in-telangana/",
       },
     },
     category: "Blow Moulding Machines",
@@ -1889,7 +1889,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/automatic-blow-moulding-machine-manufacturer-in-uttar-pradesh/",
+          "https://www.blowmouldmachinemanufacturer.com/products/automatic-blow-moulding-machine-manufacturer-in-uttar-pradesh/",
       },
     },
     category: "Blow Moulding Machines",
@@ -2244,7 +2244,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/plastic-blow-moulding-machine-manufacturer-in-uttarakhand/",
+          "https://www.blowmouldmachinemanufacturer.com/products/plastic-blow-moulding-machine-manufacturer-in-uttarakhand/",
       },
     },
     category: "Blow Moulding Machines",
@@ -2544,7 +2544,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/plastic-blow-moulding-machine-manufacturer-in-punjab/",
+          "https://www.blowmouldmachinemanufacturer.com/products/plastic-blow-moulding-machine-manufacturer-in-punjab/",
       },
     },
     category: "Blow Moulding Machines",
@@ -2830,7 +2830,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/plastic-blow-moulding-machine-manufacturer-in-jharkhand/",
+          "https://www.blowmouldmachinemanufacturer.com/products/plastic-blow-moulding-machine-manufacturer-in-jharkhand/",
       },
     },
     category: "Blow Moulding Machines",
@@ -3125,7 +3125,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/plastic-blow-moulding-machine-manufacturer-in-telangana/",
+          "https://www.blowmouldmachinemanufacturer.com/products/plastic-blow-moulding-machine-manufacturer-in-telangana/",
       },
     },
     category: "Blow Moulding Machines",
@@ -3419,7 +3419,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/plastic-blow-moulding-machine-manufacturer-in-uttar-pradesh/",
+          "https://www.blowmouldmachinemanufacturer.com/products/plastic-blow-moulding-machine-manufacturer-in-uttar-pradesh/",
       },
     },
     category: "Blow Moulding Machines",
@@ -3718,7 +3718,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/signal-head-double-stage-model-few2000h/",
+          "https://www.blowmouldmachinemanufacturer.com/products/signal-head-double-stage-model-few2000h/",
       },
     },
     category: "Blow Moulding Machines",
@@ -3798,7 +3798,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/signal-head-double-stage-model-few1000h/",
+          "https://www.blowmouldmachinemanufacturer.com/products/signal-head-double-stage-model-few1000h/",
       },
     },
     category: "Blow Moulding Machines",
@@ -3880,7 +3880,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/signal-head-single-stage-model-few1000h/",
+          "https://www.blowmouldmachinemanufacturer.com/products/signal-head-single-stage-model-few1000h/",
       },
     },
     category: "Blow Moulding Machines",
@@ -3961,7 +3961,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/signal-head-single-stage-model-few500h/",
+          "https://www.blowmouldmachinemanufacturer.com/products/signal-head-single-stage-model-few500h/",
       },
     },
     category: "Blow Moulding Machines",
@@ -4041,7 +4041,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/signal-head-double-stage-model-few250h/",
+          "https://www.blowmouldmachinemanufacturer.com/products/signal-head-double-stage-model-few250h/",
       },
     },
     category: "Blow Moulding Machines",
@@ -4121,7 +4121,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/signal-head-single-stage-model-few250h/",
+          "https://www.blowmouldmachinemanufacturer.com/products/signal-head-single-stage-model-few250h/",
       },
     },
     category: "Blow Moulding Machines",
@@ -4202,7 +4202,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/2ltr-single-head-single-station-with-v-strip-system/",
+          "https://www.blowmouldmachinemanufacturer.com/products/2ltr-single-head-single-station-with-v-strip-system/",
       },
     },
     category: "Blow Moulding Machines",
@@ -4283,7 +4283,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/2ltr-triple-head-double-station-with-auto-de-flashing-system/",
+          "https://www.blowmouldmachinemanufacturer.com/products/2ltr-triple-head-double-station-with-auto-de-flashing-system/",
       },
     },
     category: "Blow Moulding Machines",
@@ -4316,7 +4316,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/250ml-single-head-single-station/",
+          "https://www.blowmouldmachinemanufacturer.com/products/250ml-single-head-single-station/",
       },
     },
     category: "Blow Moulding Machines",
@@ -4352,7 +4352,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/5ltr-single-head-single-station/",
+          "https://www.blowmouldmachinemanufacturer.com/products/5ltr-single-head-single-station/",
       },
     },
     category: "Blow Moulding Machines",
@@ -4433,7 +4433,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/blow-moulding-machines-manufacturers-in-amritsar/",
+          "https://www.blowmouldmachinemanufacturer.com/products/blow-moulding-machines-manufacturers-in-amritsar/",
       },
     },
     category: "Blow Moulding Machines",
@@ -4480,7 +4480,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/blow-moulding-machines-manufacturers-in-hoshiarpur/",
+          "https://www.blowmouldmachinemanufacturer.com/products/blow-moulding-machines-manufacturers-in-hoshiarpur/",
       },
     },
     category: "Blow Moulding Machines",
@@ -4560,7 +4560,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/high-speed-blow-molding-machine/",
+          "https://www.blowmouldmachinemanufacturer.com/products/high-speed-blow-molding-machine/",
       },
     },
     category: "Blow Moulding Machines",
@@ -4609,7 +4609,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/accumulator-blow-moulding-machine-manufacturer/",
+          "https://www.blowmouldmachinemanufacturer.com/products/accumulator-blow-moulding-machine-manufacturer/",
       },
     },
     category: "Blow Moulding Machines",
@@ -4958,7 +4958,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/auto-deflashing-blow-moulding-machine-manufacturer/",
+          "https://www.blowmouldmachinemanufacturer.com/products/auto-deflashing-blow-moulding-machine-manufacturer/",
       },
     },
     category: "Blow Moulding Machines",
@@ -5333,7 +5333,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/blow-molding-machines-manufacturers-in-baddi/",
+          "https://www.blowmouldmachinemanufacturer.com/products/blow-molding-machines-manufacturers-in-baddi/",
       },
     },
     category: "Blow Moulding Machines",
@@ -5380,7 +5380,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/blow-molding-machines-suppliers-in-haridwar/",
+          "https://www.blowmouldmachinemanufacturer.com/products/blow-molding-machines-suppliers-in-haridwar/",
       },
     },
     category: "Blow Moulding Machines",
@@ -5657,7 +5657,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/hdpe-plastic-blow-molding-machines-suppliers-in-jalandar/",
+          "https://www.blowmouldmachinemanufacturer.com/products/hdpe-plastic-blow-molding-machines-suppliers-in-jalandar/",
       },
     },
     category: "Blow Moulding Machines",
@@ -5704,7 +5704,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/blow-molding-machines-suppliers-in-ludhiana/",
+          "https://www.blowmouldmachinemanufacturer.com/products/blow-molding-machines-suppliers-in-ludhiana/",
       },
     },
     category: "Blow Moulding Machines",
@@ -5751,7 +5751,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/blow-molding-machines-manufacturers-in-punjab/",
+          "https://www.blowmouldmachinemanufacturer.com/products/blow-molding-machines-manufacturers-in-punjab/",
       },
     },
     category: "Blow Moulding Machines",
@@ -6012,7 +6012,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/blow-molding-machines-suppliers-in-uttrakhand/",
+          "https://www.blowmouldmachinemanufacturer.com/products/blow-molding-machines-suppliers-in-uttrakhand/",
       },
     },
     category: "Blow Moulding Machines",
@@ -6058,7 +6058,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/blow-moulding-machines-manufacturer-in-faridabad/",
+          "https://www.blowmouldmachinemanufacturer.com/products/blow-moulding-machines-manufacturer-in-faridabad/",
       },
     },
     category: "Blow Moulding Machines",
@@ -6099,7 +6099,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/blow-moulding-machines-manufacturer-in-jaipur/",
+          "https://www.blowmouldmachinemanufacturer.com/products/blow-moulding-machines-manufacturer-in-jaipur/",
       },
     },
     category: "Blow Moulding Machines",
@@ -6140,7 +6140,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/faith-blow-moulding-machine-manufacturer-in-noida/",
+          "https://www.blowmouldmachinemanufacturer.com/products/faith-blow-moulding-machine-manufacturer-in-noida/",
       },
     },
     category: "Blow Moulding Machines",
@@ -6183,7 +6183,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/automatic-blow-moulding-machine-manufacturer/",
+          "https://www.blowmouldmachinemanufacturer.com/products/automatic-blow-moulding-machine-manufacturer/",
       },
     },
     category: "Blow Moulding Machines",
@@ -6485,7 +6485,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/500ml-double-head-double-stage-blow-molding-machine/",
+          "https://www.blowmouldmachinemanufacturer.com/products/500ml-double-head-double-stage-blow-molding-machine/",
       },
     },
     category: "Blow Moulding Machines",
@@ -6529,7 +6529,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/5-liter-single-head-single-stage-blow-molding-machine",
+          "https://www.blowmouldmachinemanufacturer.com/products/5-liter-single-head-single-stage-blow-molding-machine",
       },
     },
     category: "Blow Moulding Machines",
@@ -6573,7 +6573,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/250ml-double-stage-triple-head-blow-molding-machine/",
+          "https://www.blowmouldmachinemanufacturer.com/products/250ml-double-stage-triple-head-blow-molding-machine/",
       },
     },
     category: "Blow Moulding Machines",
@@ -6617,7 +6617,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/faith-1-liter-single-head-single-stage-blow-molding-machine-with-v-strip/",
+          "https://www.blowmouldmachinemanufacturer.com/products/faith-1-liter-single-head-single-stage-blow-molding-machine-with-v-strip/",
       },
     },
     category: "Blow Moulding Machines",
@@ -6662,7 +6662,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/plastic-blow-moulding-machine/",
+          "https://www.blowmouldmachinemanufacturer.com/products/plastic-blow-moulding-machine/",
       },
     },
     category: "Blow Moulding Machines",
@@ -6974,7 +6974,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/product/100ml-single-stage-single-head-blow-moulding-machine",
+          "https://www.blowmouldmachinemanufacturer.com/products/100ml-single-stage-single-head-blow-moulding-machine",
       },
     },
     category: "Blow Moulding Machines",

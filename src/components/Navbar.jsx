@@ -531,7 +531,7 @@ export default function Navbar() {
 
                       {/* Mega Dropdown for Products */}
                       {isProductHovered && (
-                        <div className="absolute left-1/2 top-[calc(100%-6px)] z-[150] w-[min(900px,85vw)] -translate-x-1/2 overflow-hidden rounded-2xl border border-gray-100 bg-white text-gray-900 shadow-[0_25px_60px_rgba(65,0,15,0.22)]">
+                        <div className="absolute left-1/2 top-[calc(100%-6px)] z-[150] w-[min(1200px,92vw)] -translate-x-1/2 overflow-hidden rounded-2xl border border-gray-100 bg-white text-gray-900 shadow-[0_25px_60px_rgba(65,0,15,0.22)]">
                           <div className="flex items-center justify-between border-b border-red-50 bg-gradient-to-r from-[#FFF5F5] via-white to-[#FFF5F5] px-5 py-3">
                             <div className="flex items-center gap-2">
                               <PackageSearch
@@ -553,7 +553,7 @@ export default function Navbar() {
                           </div>
 
                           <div className="max-h-[62vh] overflow-y-auto overscroll-contain p-4">
-                            <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 md:grid-cols-3">
+                            <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                               {products.map((product) => {
                                 const imgSrc = getProductImage(product);
                                 return (

@@ -79,7 +79,7 @@ export default function BlogPost() {
             <motion.p {...fadeInUp}>
               This is why more manufacturers are switching to an{" "}
               <Link
-                href="/product/auto-deflashing-blow-moulding-machine-manufacturer/"
+                href="/products/auto-deflashing-blow-moulding-machine-manufacturer/"
                 className="text-red-700 font-bold no-underline hover:text-red-800 transition-colors duration-150"
               >
                 auto deflashing blow moulding machine
@@ -141,7 +141,7 @@ export default function BlogPost() {
             <motion.p {...fadeInUp}>
               An{" "}
               <Link
-                href="/product/auto-deflashing-blow-moulding-machine-manufacturer/"
+                href="/products/auto-deflashing-blow-moulding-machine-manufacturer/"
                 className="text-red-700 font-bold no-underline hover:text-red-800 transition-colors duration-150"
               >
                 auto deflashing blow moulding machine manufacturers
@@ -190,7 +190,7 @@ export default function BlogPost() {
             <motion.p {...fadeInUp}>
               A good{" "}
               <Link
-                href="/product/auto-deflashing-blow-moulding-machine-manufacturer/"
+                href="/products/auto-deflashing-blow-moulding-machine-manufacturer/"
                 className="text-red-700 font-bold no-underline hover:text-red-800 transition-colors duration-150"
               >
                 auto deflashing blow moulding machine manufacturers
@@ -929,7 +929,7 @@ export default function BlogPost() {
                 <p className="text-slate-800 font-medium">
                   Get in touch with{" "}
                   <Link
-                    href="/product/auto-deflashing-blow-moulding-machine-manufacturer/"
+                    href="/products/auto-deflashing-blow-moulding-machine-manufacturer/"
                     className="text-red-700 font-bold no-underline hover:text-red-800 transition-colors duration-150"
                   >
                     Faith Engineering Works

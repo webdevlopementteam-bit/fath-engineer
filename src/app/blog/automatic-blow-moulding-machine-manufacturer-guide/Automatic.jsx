@@ -59,7 +59,7 @@ export default function BlowMouldingGuidePage() {
           <p>
             If you are searching for a reliable{" "}
             <Link
-              href="/product/automatic-blow-moulding-machine-manufacturer/"
+              href="/products/automatic-blow-moulding-machine-manufacturer/"
               className="text-[#dc2626] hover:text-red-700 font-semibold "
             >
               Automatic Blow Moulding Machine Manufacturer
@@ -115,7 +115,7 @@ export default function BlowMouldingGuidePage() {
           <p>
             An{" "}
             <Link
-              href="/product/automatic-blow-moulding-machine-manufacturer/"
+              href="/products/automatic-blow-moulding-machine-manufacturer/"
               className="text-[#dc2626] hover:text-red-700 font-semibold "
             >
               Automatic Blow Moulding Machine
@@ -200,7 +200,7 @@ export default function BlowMouldingGuidePage() {
           <p>
             As an established{" "}
             <Link
-              href="/product/automatic-blow-moulding-machine-manufacturer/"
+              href="/products/automatic-blow-moulding-machine-manufacturer/"
               className="text-[#dc2626] hover:text-red-700 font-semibold "
             >
               Automatic Blow Moulding Machine Manufacturer
@@ -1077,7 +1077,7 @@ export default function BlowMouldingGuidePage() {
           <p>
             Choosing the right{" "}
             <Link
-              href="/product/automatic-blow-moulding-machine-manufacturer/"
+              href="/products/automatic-blow-moulding-machine-manufacturer/"
               className="text-red-600 hover:text-red-700 font-bold  underline-offset-2 transition-colors"
             >
               Automatic Blow Moulding Machine Manufacturer

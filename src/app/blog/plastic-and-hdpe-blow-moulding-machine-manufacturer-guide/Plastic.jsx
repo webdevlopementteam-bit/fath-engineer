@@ -334,7 +334,7 @@ export default function BlowMouldingGuidePage() {
             </span>
             ,{" "}
             <Link
-              href="/product/plastic-blow-moulding-machine"
+              href="/products/plastic-blow-moulding-machine"
               className="text-[#dc2626] font-semibold decoration-[#dc2626] transition-colors"
             >
               Plastic Blow Moulding Machine Manufacturer
@@ -514,7 +514,7 @@ export default function BlowMouldingGuidePage() {
           <p>
             To give you a real idea of what{" "}
             <Link
-              href="/product/plastic-blow-moulding-machine/"
+              href="/products/plastic-blow-moulding-machine/"
               className="text-[#dc2626] font-semibold decoration-[#dc2626] transition-colors"
             >
               Faith Engineering Works
